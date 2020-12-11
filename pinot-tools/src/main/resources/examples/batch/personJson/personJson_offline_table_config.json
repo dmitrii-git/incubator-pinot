@@ -1,0 +1,24 @@
+{
+  "tableName": "personJson",
+  "tableType": "OFFLINE",
+  "segmentsConfig": {
+    "segmentPushType": "APPEND",
+    "segmentAssignmentStrategy": "BalanceNumSegmentAssignmentStrategy",
+    "schemaName": "personJson",
+    "replication": "1"
+  },
+  "tenants": {
+  },
+  "tableIndexConfig": {
+    "loadMode": "HEAP",
+    "invertedIndexColumns": [
+    ],
+    "jsonIndexColumns": [
+      "person"
+    ]
+  },
+  "metadata": {
+    "customConfigs": {
+    }
+  }
+}

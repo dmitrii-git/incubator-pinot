@@ -1,0 +1,9 @@
+{
+  "dimensionFieldSpecs": [
+    {
+      "dataType": "STRING",
+      "name": "person"
+    }
+  ],
+  "schemaName": "personJson"
+}

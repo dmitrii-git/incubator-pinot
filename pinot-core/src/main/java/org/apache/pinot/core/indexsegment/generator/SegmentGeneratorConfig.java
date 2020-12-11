@@ -70,6 +70,7 @@ public class SegmentGeneratorConfig {
   private Map<String, ChunkCompressorFactory.CompressionType> _rawIndexCompressionType = new HashMap<>();
   private List<String> _invertedIndexCreationColumns = new ArrayList<>();
   private List<String> _textIndexCreationColumns = new ArrayList<>();
+  private List<String> _jsonIndexCreationColumns = new ArrayList<>();
   private List<String> _columnSortOrder = new ArrayList<>();
   private List<String> _varLengthDictionaryColumns = new ArrayList<>();
   private String _inputFilePath = null;
@@ -169,6 +170,8 @@ public class SegmentGeneratorConfig {
           || indexingConfig.isCreateInvertedIndexDuringSegmentGeneration()) {
         _invertedIndexCreationColumns = indexingConfig.getInvertedIndexColumns();
       }
+
+      _jsonIndexCreationColumns = indexingConfig.getJsonIndexColumns();
 
       List<FieldConfig> fieldConfigList = tableConfig.getFieldConfigList();
       if (fieldConfigList != null) {
@@ -271,6 +274,10 @@ public class SegmentGeneratorConfig {
    */
   public List<String> getTextIndexCreationColumns() {
     return _textIndexCreationColumns;
+  }
+
+  public List<String> getJsonIndexCreationColumns() {
+    return _jsonIndexCreationColumns;
   }
 
   public List<String> getColumnSortOrder() {
